@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>RNFL</title>
+<meta name="theme-color" content="#14171A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="RNFL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- HOME VIEW -->
+  <section id="view-home" class="view">
+    <div class="home-wrap">
+      <div class="home-badge">
+        <span class="home-badge-ring"></span>
+        <h1 class="home-title">RNFL</h1>
+      </div>
+      <p class="home-sub">Real teams. Real players. Real time.</p>
+      <div class="home-stripe" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="home-hint">Use TEAMS to browse rosters and player stats, or GAMES to see the schedule and live scores.</p>
+      <p class="home-clock" id="home-clock">--:--:--</p>
+    </div>
+  </section>
+
+  <!-- TEAMS LIST VIEW -->
+  <section id="view-teams" class="view">
+    <header class="page-header">
+      <h2>Teams</h2>
+      <p class="page-header-sub">Tap a team to see the roster</p>
+    </header>
+    <div id="teams-list" class="scroll-list teams-grid">
+      <div class="loading">Loading teams…</div>
+    </div>
+  </section>
+
+  <!-- ROSTER VIEW -->
+  <section id="view-roster" class="view">
+    <header class="page-header page-header-back">
+      <button class="back-btn" data-back="view-teams" aria-label="Back to teams">‹</button>
+      <div class="page-header-team" id="roster-team-heading">
+        <img id="roster-team-logo" class="page-header-logo" alt="">
+        <h2 id="roster-team-name">Team</h2>
+      </div>
+      <p class="page-header-sub">Tap a player to see stats</p>
+    </header>
+    <div id="roster-list" class="scroll-list">
+      <div class="loading">Loading roster…</div>
+    </div>
+  </section>
+
+  <!-- PLAYER STATS VIEW -->
+  <section id="view-player" class="view">
+    <header class="page-header page-header-back">
+      <button class="back-btn" data-back="view-roster" aria-label="Back to roster">‹</button>
+      <div class="page-header-team" id="player-heading">
+        <img id="player-headshot" class="player-headshot" alt="">
+        <div>
+          <h2 id="player-name">Player</h2>
+          <p class="page-header-sub" id="player-meta">—</p>
+        </div>
+      </div>
+    </header>
+    <div id="player-detail" class="scroll-list">
+      <div class="loading">Loading player…</div>
+    </div>
+    <p class="refresh-note">Stats refresh automatically every 30 seconds <span id="refresh-dot" class="dot"></span></p>
+  </section>
+
+  <!-- GAMES VIEW -->
+  <section id="view-games" class="view">
+    <header class="page-header">
+      <h2>Games</h2>
+      <p class="page-header-sub">Scroll for later weeks in the season</p>
+    </header>
+    <div id="games-list" class="scroll-list">
+      <div class="loading">Loading schedule…</div>
+    </div>
+  </section>
+
+  <!-- GAME DETAIL VIEW -->
+  <section id="view-game" class="view">
+    <header class="page-header page-header-back">
+      <button class="back-btn" data-back="view-games" aria-label="Back to games">‹</button>
+      <h2>Game</h2>
+    </header>
+    <div id="game-detail" class="scroll-list">
+      <div class="loading">Loading game…</div>
+    </div>
+  </section>
+
+  <!-- BOTTOM NAV -->
+  <nav id="bottom-nav">
+    <button class="nav-btn active" data-target="view-home">
+      <span class="nav-icon">⌂</span>
+      <span class="nav-label">Home</span>
+    </button>
+    <button class="nav-btn" data-target="view-teams">
+      <span class="nav-icon">▥</span>
+      <span class="nav-label">Teams/Players</span>
+    </button>
+    <button class="nav-btn" data-target="view-games">
+      <span class="nav-icon">◷</span>
+      <span class="nav-label">Games</span>
+    </button>
+  </nav>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
