@@ -19,27 +19,12 @@
 
   <!-- HOME VIEW -->
   <section id="view-home" class="view">
-    <div class="home-wrap">
-      <div class="home-badge">
-        <span class="home-badge-ring"></span>
-        <h1 class="home-title">RNFL</h1>
-      </div>
-      <p class="home-sub">Real teams. Real players. Real time.</p>
-      <div class="home-stripe" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-      <p class="home-hint">Use TEAMS to browse rosters and player stats, or GAMES to see the schedule and live scores.</p>
-      <p class="home-clock" id="home-clock">--:--:--</p>
-    </div>
+    <h1 class="home-title">RNFL</h1>
   </section>
 
   <!-- TEAMS LIST VIEW -->
   <section id="view-teams" class="view">
-    <header class="page-header">
-      <h2>Teams</h2>
-      <p class="page-header-sub">Tap a team to see the roster</p>
-    </header>
-    <div id="teams-list" class="scroll-list teams-grid">
+    <div id="teams-list" class="scroll-list teams-list">
       <div class="loading">Loading teams…</div>
     </div>
   </section>
@@ -52,7 +37,6 @@
         <img id="roster-team-logo" class="page-header-logo" alt="">
         <h2 id="roster-team-name">Team</h2>
       </div>
-      <p class="page-header-sub">Tap a player to see stats</p>
     </header>
     <div id="roster-list" class="scroll-list">
       <div class="loading">Loading roster…</div>
@@ -70,19 +54,15 @@
           <p class="page-header-sub" id="player-meta">—</p>
         </div>
       </div>
+      <span id="refresh-dot" class="dot" aria-hidden="true"></span>
     </header>
     <div id="player-detail" class="scroll-list">
       <div class="loading">Loading player…</div>
     </div>
-    <p class="refresh-note">Stats refresh automatically every 30 seconds <span id="refresh-dot" class="dot"></span></p>
   </section>
 
   <!-- GAMES VIEW -->
   <section id="view-games" class="view">
-    <header class="page-header">
-      <h2>Games</h2>
-      <p class="page-header-sub">Scroll for later weeks in the season</p>
-    </header>
     <div id="games-list" class="scroll-list">
       <div class="loading">Loading schedule…</div>
     </div>
@@ -90,9 +70,8 @@
 
   <!-- GAME DETAIL VIEW -->
   <section id="view-game" class="view">
-    <header class="page-header page-header-back">
+    <header class="page-header page-header-back page-header-bare">
       <button class="back-btn" data-back="view-games" aria-label="Back to games">‹</button>
-      <h2>Game</h2>
     </header>
     <div id="game-detail" class="scroll-list">
       <div class="loading">Loading game…</div>
