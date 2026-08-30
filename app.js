@@ -70,14 +70,6 @@ document.querySelectorAll(".back-btn").forEach(btn=>{
   btn.addEventListener("click", ()=> showView(btn.dataset.back));
 });
 
-/* ---------------- home clock ---------------- */
-function tickClock(){
-  const el = $("home-clock");
-  if(el) el.textContent = new Date().toLocaleTimeString();
-}
-setInterval(tickClock, 1000);
-tickClock();
-
 /* =========================================================
    TEAMS
    ========================================================= */
@@ -99,14 +91,14 @@ function renderTeams(){
   container.innerHTML = "";
   state.teams.forEach(team=>{
     const logo = team.logos?.[0]?.href || "";
-    const card = document.createElement("div");
-    card.className = "team-card";
-    card.innerHTML = `
+    const row = document.createElement("div");
+    row.className = "team-row";
+    row.innerHTML = `
       <img src="${logo}" alt="${team.displayName} logo" loading="lazy">
       <span class="team-name">${team.displayName}</span>
     `;
-    card.addEventListener("click", ()=> openRoster(team));
-    container.appendChild(card);
+    row.addEventListener("click", ()=> openRoster(team));
+    container.appendChild(row);
   });
 }
 
